@@ -1,15 +1,11 @@
-// Aqui va el javascript de la navbar que vamos a utilizar
 import React from "react";
 
 import {Link, useNavigate} from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
-
-
-
 import '../assets/css/Navbar.css'
 
 const Navbar = () => {
-    const { logout } = useAuth();
+    const { user, logout } = useAuth();
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -19,10 +15,18 @@ const Navbar = () => {
     
 
     return (
-        <div className="nav">
-            <ul className="nav-menu">
+        <div className="navbar">
+            <div className="navbar-left">
+                <div className="navbar-logo"> USM.cl </div>
+            </div>
+            
+            <ul className="navbar-right">
                 <li><Link to="/">Home</Link></li>
-                <li><button onClick={handleLogout}>Log Out</button></li>
+                {user ? (
+                    <>
+                        <li><button className="navbar-button" onClick={handleLogout}>Log Out</button></li>
+                    </>
+                ) : null }
             </ul>
         </div>
     );

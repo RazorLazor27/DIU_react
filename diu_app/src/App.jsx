@@ -8,6 +8,7 @@ import './App.css'
 
 import Home from "./pages/Home.jsx"
 import Navbar from "./components/Navbar.jsx"
+import Header from './components/Header.jsx';
 import Landing from "./pages/Landing.jsx"
 
 
@@ -17,6 +18,7 @@ function App() {
 		<div className='App'>
 			<BrowserRouter>
 				<Navbar/>
+				<Header/>
 				<div className='pages'>
 					<Routes>
 						<Route path="/Home" element={user ? <Home /> : <Navigate to="/"/>}/>

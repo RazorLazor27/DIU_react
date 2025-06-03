@@ -1,0 +1,59 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #ffffff; /* Blanco o el color que prefieras */
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Zona izquierda: logo USM */
+.header-left .usm-logo {
+  height: 80px;
+  width: auto;
+}
+
+/* Zona derecha: botón con imagen */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.header-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Logo dentro del botón */
+.header-logo {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+}
+
+.login-button {
+  background-color: #004b87;
+  color: white;
+  border: none;
+  padding: 14px 28px;         /* Más alto y más ancho */
+  font-size: 1.15rem;         /* Texto más grande */
+  font-weight: bold;
+  border-radius: 12px;        /* Bordes más redondeados */
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, transform 0.1s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.login-button:hover {
+  background-color: #003a6d;
+  transform: scale(1.05); /* Pequeña animación al pasar el mouse */
+}
