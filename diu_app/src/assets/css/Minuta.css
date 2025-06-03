@@ -1,0 +1,51 @@
+.minuta-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.minuta-label {
+  display: block;
+  margin: 1rem auto;
+  font-weight: bold;
+  color: #004b87;
+}
+
+.minuta-select {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+}
+
+.minuta-img-wrapper {
+  margin-top: 2rem;
+}
+
+.minuta-img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.volver-btn {
+  margin-top: 2rem;
+  background-color: #004b87;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.volver-btn:hover {
+  background-color: #003a6d;
+}

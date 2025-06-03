@@ -12,6 +12,8 @@ import Header from './components/Header.jsx';
 import Landing from "./pages/Landing.jsx"
 import Reserva from './pages/Reserva.jsx';
 import AnularReserva from './pages/AnularReserva.jsx';
+import MisReservas from './pages/MisReservas.jsx';
+import Minuta from './pages/Minuta.jsx';
 
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
 						<Route path="/" element={!user ? <Landing /> : <Navigate to="/Home" />} />
 						<Route path="/Reserva" element={user ? <Reserva /> : <Navigate to="/" />} />
 						<Route path="/Anular-reserva" element={user ? <AnularReserva /> : <Navigate to="/" />} />
+						<Route path="/Mis-reservas" element={user ? <MisReservas /> : <Navigate to="/" />} />
+						<Route path="/Minuta" element={user ? <Minuta /> : <Navigate to="/" />} />
 					</Routes>
 				</div>
 			</BrowserRouter>
