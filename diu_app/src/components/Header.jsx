@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import {Link, useNavigate} from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
@@ -10,6 +10,11 @@ import LogoHeader from "../assets/images/logo-header.svg"
 const Header = () => {
     const { user, login } = useAuth();
     const navigate = useNavigate();
+
+    const [menuOpen, setMenuOpen] = useState(false);
+    const dropdownref = useRef(null);
+
+
 
     const handleLogin = () => {
     login();

@@ -1,0 +1,19 @@
+.container {
+    max-width: 90%;
+    margin: auto;
+}
+
+.card-title {
+    vertical-align: middle;
+    text-align: center;
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    line-height: 1em;
+    text-decoration: none;
+    margin: 15px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+
+}

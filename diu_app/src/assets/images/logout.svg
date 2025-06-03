@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Marco de puerta -->
+  <rect x="12" y="16" width="24" height="32" rx="2" stroke="#004b87" stroke-width="4"/>
+  <!-- Flecha de salida -->
+  <line x1="36" y1="32" x2="56" y2="32" stroke="#004b87" stroke-width="4" stroke-linecap="round"/>
+  <polyline points="48,24 56,32 48,40" fill="none" stroke="#004b87" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
