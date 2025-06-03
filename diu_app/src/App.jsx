@@ -14,6 +14,7 @@ import Reserva from './pages/Reserva.jsx';
 import AnularReserva from './pages/AnularReserva.jsx';
 import MisReservas from './pages/MisReservas.jsx';
 import Minuta from './pages/Minuta.jsx';
+import Consumos from './pages/Consumos.jsx';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
 						<Route path="/Anular-reserva" element={user ? <AnularReserva /> : <Navigate to="/" />} />
 						<Route path="/Mis-reservas" element={user ? <MisReservas /> : <Navigate to="/" />} />
 						<Route path="/Minuta" element={user ? <Minuta /> : <Navigate to="/" />} />
+						<Route path="/Mis-consumos" element={user ? <Consumos /> : <Navigate to="/" />} /> 
 					</Routes>
 				</div>
 			</BrowserRouter>

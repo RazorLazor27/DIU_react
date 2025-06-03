@@ -30,7 +30,7 @@ const AnularReserva = () => {
 
   return (
     <div className="mis-reservas-container">
-      <h2>Mis Reservas</h2>
+      <h2>Eliminas mis Reservas</h2>
       <p>Haz clic en una fecha para eliminar esa reserva.</p>
       <div className="calendar-wrapper">
         <DatePicker
@@ -44,7 +44,10 @@ const AnularReserva = () => {
       {fechas.length === 0 && <p className="no-reservas">No tienes reservas activas.</p>}
         <button
         className="volver-btn"
-        onClick={() => navigate('/Home')}
+        onClick={() => {
+            alert("Fechas anuladas correctamente!");
+            navigate('/Home');
+        }}
         >
             Volver al Menú Principal
         </button>
