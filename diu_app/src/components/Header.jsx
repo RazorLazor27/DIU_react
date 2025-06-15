@@ -14,7 +14,13 @@ const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const dropdownref = useRef(null);
 
-
+    const handleLogoClick = () => {
+        if (user) {
+            navigate('/Home');
+        } else {
+            navigate('/')
+        }
+    }
 
     const handleLogin = () => {
     startLogin();
@@ -24,7 +30,7 @@ const Header = () => {
     return(
         <div className="header">
             <div className="header-left">
-                <img src={logoUSM} alt="Logo USM" className="usm-logo" />
+                <img src={logoUSM} alt="Logo USM" className="usm-logo" onClick={handleLogoClick} style={{cursor: 'pointer'}} />
             </div>
             <div className="header-right">
                 {(user || isLoggingIn) ? (
