@@ -3,6 +3,26 @@ import { useAuth } from "../context/AuthContext.jsx";
 import { useNavigate } from "react-router-dom";
 import '../assets/css/Login.css';
 
+const generateRolUSM = () => {
+  const year = Math.floor(Math.random() * (2025 - 2018 + 1)) + 2018;
+  const middle = Math.floor(10000 + Math.random() * 90000); // 5 dígitos
+  const lastDigit = Math.floor(Math.random() * 10); // último dígito
+
+  return `${year}${middle}-${lastDigit}`;
+};
+
+const parsemail = (email) => {
+  const aux = email.split('@')[0];
+  const formatted = aux.replaceAll('.', ' ');
+
+  // Separar por espacio y capitalizar cada palabra
+  const parts = formatted.split(' ').filter(p => p);
+  const capitalizedParts = parts.map(
+    part => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase()
+  );
+
+  return capitalizedParts.join(' ');
+};
 
 const Login = () => {
 
@@ -13,10 +33,21 @@ const Login = () => {
 
     const handleLogin = () => {
         if (email && password) {
+            const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Por favor, ingresa un correo válido con dominio.');
+                return;
+            }
+
+            const mail_formatted = parsemail(email);
+            const rol = generateRolUSM();
+
             login();
-            credentials(email);
+            credentials(mail_formatted, rol);
             endLogin();  // Terminamos el estado intermedio
+
             alert('Sesión iniciada correctamente.');
+
             navigate('/Home');
         } else {
             alert('Por favor, completa ambos campos.');

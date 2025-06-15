@@ -57,3 +57,15 @@
   background-color: #003a6d;
   transform: scale(1.05); /* Pequeña animación al pasar el mouse */
 }
+
+.header-user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-email {
+  font-size: 18px;
+  padding-right: 20px;
+  color: #333;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -9,6 +9,19 @@ const Reserva = () => {
   const [campus, setCampus] = useState('Casa Central Valparaíso');
   const [menu, setMenu] = useState('Normal');
   const [dates, setDates] = useState([]);
+  const [nombre, setNombre] = useState('');
+  const [rol, setRol] = useState('');
+
+  useEffect(() => {
+    const storedName = sessionStorage.getItem('USER_NAME');
+    const storedRol = sessionStorage.getItem('USER_ROL');
+    if (storedName) {
+      setNombre(storedName);
+    }
+    if (storedRol) {
+      setRol(storedRol)
+    }
+  }, []);
 
   const handleDateChange = (date) => {
     // Toggle date selection
@@ -19,12 +32,13 @@ const Reserva = () => {
     }
   };
 
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const reserva = {
-      rol: '202173567-4',
-      nombre: 'Carlos Soto',
+      rol: rol,
+      nombre: nombre,
       campus,
       menu,
       fechas: dates.map(d => d.toISOString())
@@ -44,11 +58,11 @@ const Reserva = () => {
       <form onSubmit={handleSubmit} className="reserva-form">
         <label>
           Rol Comensal:
-          <input type="text" value="202173567-4" disabled />
+          <input type="text" value={rol} disabled />
         </label>
         <label>
           Nombre:
-          <input type="text" value="Carlos Soto" disabled />
+          <input type="text" value={nombre} disabled />
         </label>
         <label>
           Campus o Sede:

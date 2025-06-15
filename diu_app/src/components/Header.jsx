@@ -21,11 +21,6 @@ const Header = () => {
     navigate('/Login');
     };
 
-    const handleClick = () => {
-        // Aqui abrir menu!!!
-        console.log("Abrir menu")
-    }
-    
     return(
         <div className="header">
             <div className="header-left">
@@ -33,9 +28,9 @@ const Header = () => {
             </div>
             <div className="header-right">
                 {(user || isLoggingIn) ? (
-                    <button className="header-button" onClick={handleClick}>
-                        <img src={LogoHeader} className="header-logo" alt="Abrir menú"/>
-                    </button>
+                    <div className="header-user-info">
+                        {user && <span className="user-email">👉{user.name}</span>}
+                    </div>
                 ) : (
                     <button className="login-button" onClick={handleLogin}>
                         Iniciar Sesión

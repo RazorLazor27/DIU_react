@@ -8,8 +8,10 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     const loggedIn = sessionStorage.getItem("USER_LOGIN") === "true";
+    const savedEmail = sessionStorage.getItem("USER_NAME");
     if (loggedIn) {
       setUser({ logged: true });
+      setUser({ name: savedEmail });
     }
   }, []);
   
@@ -32,9 +34,13 @@ export function AuthProvider({ children }) {
     setUser(null);
   };
 
-  const credentials = (user) => {
-    sessionStorage.setItem("USER_NAME", user)
-    setUser({ name: user})
+  const credentials = (user, rol) => {
+    sessionStorage.setItem("USER_NAME", user);
+    sessionStorage.setItem("USER_ROL", rol);
+    setUser({
+      name: user,
+      rol: rol
+    });
   }
 
   return (
