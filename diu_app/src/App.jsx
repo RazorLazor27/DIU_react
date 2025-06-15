@@ -15,6 +15,7 @@ import AnularReserva from './pages/AnularReserva.jsx';
 import MisReservas from './pages/MisReservas.jsx';
 import Minuta from './pages/Minuta.jsx';
 import Consumos from './pages/Consumos.jsx';
+import Login from './pages/Login.jsx';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
 						<Route path="/Mis-reservas" element={user ? <MisReservas /> : <Navigate to="/" />} />
 						<Route path="/Minuta" element={user ? <Minuta /> : <Navigate to="/" />} />
 						<Route path="/Mis-consumos" element={user ? <Consumos /> : <Navigate to="/" />} /> 
+						<Route path="/Login" element={!user ? <Login /> : <Navigate to="/Home" />} />
 					</Routes>
 				</div>
 			</BrowserRouter>

@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import '../assets/css/Minuta.css';
 
-import valpoImg      from '../assets/images/minutas/sanjoaquin.webp';
-import vitacuraImg   from '../assets/images/minutas/sanjoaquin.webp';
-import vinaImg       from '../assets/images/minutas/sanjoaquin.webp';
-import concepcionImg from '../assets/images/minutas/sanjoaquin.webp';
-import sanjoaquinImg from '../assets/images/minutas/sanjoaquin.webp';
+import valpoImg      from '../assets/images/minutas/cc.png';
+import vitacuraImg   from '../assets/images/minutas/vitacura.png';
+import vinaImg       from '../assets/images/minutas/vina.png';
+import concepcionImg from '../assets/images/minutas/conce.png';
+import sanjoaquinImg from '../assets/images/minutas/sanjoaquin.jpg';
 
 const campusOpciones = {
   "Casa Central Valparaíso": valpoImg,

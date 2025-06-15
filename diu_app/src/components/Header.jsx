@@ -8,7 +8,7 @@ import logoUSM from "../assets/images/logo-usm.svg"
 import LogoHeader from "../assets/images/logo-header.svg"
 
 const Header = () => {
-    const { user, login } = useAuth();
+    const { user, isLoggingIn, startLogin } = useAuth();
     const navigate = useNavigate();
 
     const [menuOpen, setMenuOpen] = useState(false);
@@ -17,8 +17,8 @@ const Header = () => {
 
 
     const handleLogin = () => {
-    login();
-    navigate('/Home');
+    startLogin();
+    navigate('/Login');
     };
 
     const handleClick = () => {
@@ -32,7 +32,7 @@ const Header = () => {
                 <img src={logoUSM} alt="Logo USM" className="usm-logo" />
             </div>
             <div className="header-right">
-                {user ? (
+                {(user || isLoggingIn) ? (
                     <button className="header-button" onClick={handleClick}>
                         <img src={LogoHeader} className="header-logo" alt="Abrir menú"/>
                     </button>
